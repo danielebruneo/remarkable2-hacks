@@ -3,17 +3,17 @@ A collection of hacks, mods, tools, tips &amp; tricks, specifically focused on t
 
 ## Introduction
 ### Why this?
-So you got your awsome Remarkable 2 because you heard that it could be "hacked", improved and customized... now what?  
+So you got your awsome reMarkable 2 because you heard that it could be "hacked", improved and customized... now what?  
 Well, you can start here!
 
-Most of the documentation, hacks and tools you can find online are still referred to the Remarkable 1 device and, unfortunately, not directly appliable to your Remarkable 2.  
-So this repo has the goal to collect all the "hacks" and tools that can be used on a Remarkable 2, how to apply them and what to expect.  
+Most of the documentation, hacks and tools you can find online are still referred to the reMarkable 1 device and, unfortunately, not directly appliable to your reMarkable 2.  
+So this repo has the goal to collect all the "hacks" and tools that can be used on a reMarkable 2, how to apply them and what to expect.  
 Things are evolving rapidly on the subject, while the user base grows. Many project are starting to support RM2 and many more will come.  
 So this is an on-going project. I'll try to keep track of everything is going on for the RM2, but any collaboration is welcome!  
 
 ### Hacks?
 First let me spend a few words on the term "hack" as it's being used here.  
-Among the Remarkable community the term "hack" has been used to point to almost everything that is not writing on the device :)  
+Among the reMarkable community the term "hack" has been used to point to almost everything that is not writing on the device :)  
 For many users open an SSH terminal to the device and edit a file follow under this term. For a seasoned linux user, clearly, that's all but hacking.  
 In one hand, the term "hack" in its wider (and original) sense of "using something in a different way than intended" is appropriate here, for a device that is being marketed as "just like a paper notebook".   
 But we know that under that eink screen sits a dual core 1.2GHz ARM CPU, with 1GB of RAM, running Linux... and... you can SSH into it by default!!! That's every hacker's dream!  
@@ -47,9 +47,12 @@ Store it in a safe location (not your RM2)! If you should be in the situation in
 
 # Hacks
 ## remarkable-hacks
-The first and most valuable improvement you should give a try is the remarkable-hacks by ddvk https://github.com/ddvk/remarkable-hacks.
+https://github.com/ddvk/remarkable-hacks
+The first and most valuable improvement you should give a try is the remarkable-hacks by ddvk.
 
-The term hack here is quite correct, this is, indeed, a binary patch that is being applied upon the original UI binary file.  
+The term hack here is quite fittin here. This is, indeed, a binary patch that is being applied upon the original UI (xochitl) binary file.  
+
+### What is it for?
 This patch adds a lot of improvements to the RM2, things that youonce you've tried you'll think they should have been there since the beginning, to start with.
 The list includes:
 - ability to select many different sizes for every writing/drawing tool
@@ -60,9 +63,12 @@ The list includes:
 - clock and battery indicator in the notebook sidebar
 - other useful gestures (for eraser, most recent document, undo, etc.)
 
+### Setup
 The installation is pretty simple:
 - you SSH into device (see above)
-- you copy-paste this command `sh -c "$(wget https://raw.githubusercontent.com/ddvk/remarkable-hacks/master/patch.sh -O-)" ` end press ENTER
+- you copy-paste this command  
+`sh -c "$(wget https://raw.githubusercontent.com/ddvk/remarkable-hacks/master/patch.sh -O-)" `  
+end press ENTER
 - the modded UI will be launched
 - once you've tried that, you press CTRL+C to stop it and go back to normal
 - if you want to make it permanent you will be instructed to type Y and the patch will be made persistent
@@ -72,10 +78,80 @@ So... you can roll it back if anything goes wrong or if you stop liking it https
 
 Follow the instruction on the original repo for more info: https://github.com/ddvk/remarkable-hacks.
 
-## (TODO) toltec
-## (TODO) rm2fb
-## (TODO) Oxide
-## (TODO) Genie
+### Compatibility
+Also if it was born for the RM1, the hack has been ported succesfull to RM2 since a while, it runs smoothly and automatically detect which kind of device you have during the setup.
+
+## Toltec
+https://github.com/toltec-dev/toltec
+Toltec is a community-maintained repository of free software for the reMarkable tablet. 
+
+This project too was intended for the reMarkable 1 and still does not have a specific channel targeted to RM2, but many packages inthere are starting to run on RM2 as well. Many of them accomplish this thanks to the *rm2fb* tool, a "compatibility layer" that allow the RM2 framebuffer (that is slightly different from its predecessor) to be threated like the RM1 one.
+
+### What is it for?
+Once you setup Toltec, you'll basically have a package manager (opkg) at your hand and a bounch of software (https://toltec-dev.org/stable/) available for being installed with `opkg install <packagename>`.
+
+### Setup
+Setup is pretty easy here too.
+You run the following commands (please refer to https://github.com/toltec-dev/toltec#install-it for up-to-date instructions) :
+```
+wget http://toltec-dev.org/bootstrap
+echo "46f556b06f5624b48e974ae040b6213828eff6aa2cc78618a4d8961a27cdc8b3  bootstrap" | sha256sum -c
+bash bootstrap
+```
+and the setup will start.
+
+Please notice that:
+- you may need (depending on your firmware) to replace the first line with `wget -k http://toltec-dev.org/bootstrap` bypassing wget SSL checks.
+- the second line performs a check against the actual installer content, so it will vary when a new version is release, so refer to the toltec repo for the latest version
+
+### Compatibility
+While not every package there has been tested for RM2 compatibility, many of them should work, once you setup rm2fb.
+
+### Additional notes
+If you want to use the *testing* branch, with the latest beta features, follow this instructions:
+- `nano /opt/etc/opkg.conf`
+- edit the last line to read `src/gz toltec https://toltec-dev.org/testing` rather than `src/gz toltec https://toltec-dev.org/stable`
+- run `opkg update`
+
+Now you are using the testing branch. Be aware, things sitting there are not confirmed to be stable yet!
+
+## rm2fb
+https://github.com/ddvk/remarkable2-framebuffer
+As previously said, this is a sort of compatibility interface to allow application intended to run on RM1 to be run smoothly on a RM2.  
+The major software difference between the two is, indeed, the framebuffer to interact with screen that has changed significantly with the new screen.
+
+### What is it for?
+This software sits in the middle and lets older app interact with it like it was an RM1 framebuffer.
+
+### Setup
+If you have installed Toltec (if you don't, go above and do it), installing rm2fb is as simple as `opkg install rm2fb`.
+
+### Compatibility
+This is specifically for RM2 and does what it promise. Majority of the RM1 app will be able to work with this installed.  
+This does not mean that all of them will work well, though. Here's a list of tested apps: https://github.com/ddvk/remarkable2-framebuffer/issues/14.
+
+## Oxide
+Once you have the ability to install new software, you will need a way to launch that, a part from manually launch it from an ssh session.  
+That's what a Launcher does. And Oxide is one of those (among with draft, remux, etc).
+
+### Setup
+Through Toltec you can simply do `opkg install oxide`.  
+Once the setup is complete you will be instructed to do the following if you want oxide to be your default launcher:
+- `systemctl disable --now xochitl`
+- `systemctl enable --now tarnish`
+
+If you want to revert it back, just do:
+- `systemctl disable --now tarnish`
+- `systemctl enable --now xochitl`
+
+### Compatibility
+The RM2 support on Oxide is still being properly implemented and it's still on a "beta" phase. But it kinda works.  
+The main things is that Oxide was thought to work together with the physical buttons the RM1 had, while the RM2 has none.  
+For instance, without the buttons, once you launch an app, you won't be able to go back to the launcher if the app has no exit button.  
+To help us handling that Genie comes to the resque (see below).
+
+## Genie
+
 
 # Credits
 This repo is freely inspired by https://github.com/reHackable/awesome-reMarkable, awsome collection, but not specifically focused on RM2.
@@ -84,5 +160,7 @@ A big thanks also goes to the amazing work of ddvk at https://github.com/ddvk/re
 # References 
 - https://github.com/reHackable/awesome-reMarkable
 - https://github.com/ddvk/remarkable-hacks
+- https://github.com/ddvk/remarkable2-framebuffer
 - https://github.com/rmkit-dev/rmkit
 - https://github.com/toltec-dev/toltec
+- https://github.com/Eeems/oxide
