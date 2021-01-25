@@ -1,6 +1,7 @@
 # remarkable2-hacks
 A collection of hacks, mods, tools, tips &amp; tricks, specifically focused on the Remarkable 2
 
+## Introduction
 So you got your awsome Remarkable 2 because you heard that it could be "hacked", improved and customized... now what?  
 Well, you can start here!
 
@@ -9,7 +10,7 @@ So this repo has the goal to collect all the "hacks" and tools that can be used 
 Things are evolving rapidly on the subject, while the user base grows. Many project are starting to support RM2 and many more will come.  
 So this is an on-going project. I'll try to keep track of everything is going on for the RM2, but any collaboration is welcome!  
 
-# Hacks?
+### Hacks?
 First let me spend a few words on the term "hack" as it's being used here.  
 Among the Remarkable community the term "hack" has been used to point to almost everything that is not writing on the device :)  
 For many users open an SSH terminal to the device and edit a file follow under this term. For a seasoned linux user, clearly, that's all but hacking.  
@@ -20,16 +21,16 @@ So, for the one of you that links the term "hack" to "illegaly gain access" or t
 
 The most adequate term for many of these customizations should be "mod", while often is simply "installing custom software on an open device"... but, it's somewhat significant that the way this kind of device are normally "jailed" by manufacturers make us think that installing a software is actually hacking it :)
 
-# Disclaimer
+### Disclaimer
 While one of the goal of this repo is try to give you things (and simple procedures) that has been proved to work on a RM2, all you will do is at your own risk and no warranty is given by anyone to anyone. Be aware, you could brick your device if you don't know what you are doing!
 
-# USB network interface
+## USB network interface
 To enter something, we need a door. And the best one to do this sort of things is the virtual network interface that is provided over USB.  
 If you plug the USB-C cable into your PC, indeed, a part from recharging your device, a new virtual ethernet interface will be created, ready to estabilish a connection to the device.
 
 The RM2 will be available at 10.11.99.1
 
-# SSH into device
+## SSH into device
 The first thing you should do then, is SSH into the device.  
 To do this, first you need to know how to SSH. Have a look here if you don't: http://letmegooglethat.com/?q=how+to+ssh+from+windows+linux+mac
 
