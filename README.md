@@ -1,6 +1,12 @@
 # remarkable2-hacks
 A collection of hacks, mods, tools, tips &amp; tricks, specifically focused on the Remarkable 2
 
+### Disclaimer
+While one of the goal of this repo is try to give you things (and simple procedures) that has been proved to work on a RM2, all you will do is at your own risk and no warranty is given by anyone to anyone. Be aware, you could brick your device if you don't know what you are doing!
+
+Also, for the moment, all of this is very experimental and still requires some more test to be confirmed as working on every device!
+Everyone who is willing to test this and confirm is welcome :)
+
 ## Introduction
 ### Why this?
 So you got your awsome reMarkable 2 because you heard that it could be "hacked", improved and customized... now what?  
@@ -22,10 +28,13 @@ So, for the one of you that links the term "hack" to "illegaly gain access" or t
 
 The most adequate term for many of these customizations should be "mod", while often is simply "installing custom software on an open device"... but, it's somewhat significant that the way this kind of device are normally "jailed" by manufacturers make us think that installing a software is actually hacking it :)
 
-### Disclaimer
-While one of the goal of this repo is try to give you things (and simple procedures) that has been proved to work on a RM2, all you will do is at your own risk and no warranty is given by anyone to anyone. Be aware, you could brick your device if you don't know what you are doing!
+### Contribute / Support / Requests
+Please use Discussions for any feedback: https://github.com/danielebruneo/remarkable2-hacks/discussions
 
 ## Preliminary Steps
+First of all let me say that, while I try to make things simple for anyone, a general computer knowledge and some specific Linux shell confidence is required to go forward.  
+A part from that you will need the following steps:
+
 ### USB network interface
 To enter something, we need a door. And the best one to do this sort of things is the virtual network interface that is provided over USB.  
 If you plug the USB-C cable into your PC, indeed, a part from recharging your device, a new virtual ethernet interface will be created, ready to estabilish a connection to the device.
@@ -44,6 +53,9 @@ Third, you'll need the SSH password.
 This is found on your RM2, going into Menu->Settings->Help->Copyright and licences.  
 At the end of this page you will find all the IP addresses of your device and the SSH password you'll need.  
 Store it in a safe location (not your RM2)! If you should be in the situation in which the standard UI won't lunch, that could save you from fully bricking your device.
+
+### Back it up
+Please make sure you have fully synced your device and possibly done a backup of your work by other means before doing any changes to the software.
 
 # Hacks
 ## remarkable-hacks
@@ -151,7 +163,26 @@ For instance, without the buttons, once you launch an app, you won't be able to 
 To help us handling that Genie comes to the resque (see below).
 
 ## Genie
+https://github.com/rmkit-dev/rmkit/tree/master/src/genie
+Genie is a config based gesture launcher.
 
+### What is it for?
+It allow you to execute commands when a gesture is performed.
+The main reasone we are going to use it is in combination with our Oxide Launcher, to handle the "Back to the launcher" action.
+
+### Setup
+- With Toltec installed, run `opkg install genie`.
+- edit the config file with `nano /opt/etc/genie.conf`
+- copy-paste the following
+```
+gesture=tap
+fingers=2
+command=/opt/bin/rot apps call previousApplication
+duration=1
+```
+- save
+- restart genie with `systemctl restart genie`
+- now if you tap with two fingers for more than a second, you'll go back to the launcher
 
 # Credits
 This repo is freely inspired by https://github.com/reHackable/awesome-reMarkable, awsome collection, but not specifically focused on RM2.
