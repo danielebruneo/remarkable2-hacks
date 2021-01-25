@@ -1,6 +1,40 @@
 # remarkable2-hacks
 A collection of hacks, mods, tools, tips &amp; tricks, specifically focused on the Remarkable 2
 
+# TOC
+- [remarkable2-hacks](#remarkable2-hacks)
+    + [Disclaimer](#disclaimer)
+  * [Introduction](#introduction)
+    + [Why this?](#why-this-)
+    + [Hacks?](#hacks-)
+    + [Contribute / Support / Requests](#contribute---support---requests)
+  * [Preliminary Steps](#preliminary-steps)
+    + [USB network interface](#usb-network-interface)
+    + [SSH into device](#ssh-into-device)
+    + [Back it up](#back-it-up)
+- [Hacks](#hacks)
+  * [remarkable-hacks](#remarkable-hacks)
+    + [What is it for?](#what-is-it-for-)
+    + [Setup](#setup)
+    + [Compatibility](#compatibility)
+  * [Toltec](#toltec)
+    + [What is it for?](#what-is-it-for--1)
+    + [Setup](#setup-1)
+    + [Compatibility](#compatibility-1)
+    + [Additional notes](#additional-notes)
+  * [rm2fb](#rm2fb)
+    + [What is it for?](#what-is-it-for--2)
+    + [Setup](#setup-2)
+    + [Compatibility](#compatibility-2)
+  * [Oxide](#oxide)
+    + [Setup](#setup-3)
+    + [Compatibility](#compatibility-3)
+  * [Genie](#genie)
+    + [What is it for?](#what-is-it-for--3)
+    + [Setup](#setup-4)
+- [Credits](#credits)
+- [References](#references)
+
 ### Disclaimer
 While one of the goal of this repo is try to give you things (and simple procedures) that has been proved to work on a RM2, all you will do is at your own risk and no warranty is given by anyone to anyone. Be aware, you could brick your device if you don't know what you are doing!
 
