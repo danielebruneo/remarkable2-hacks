@@ -94,6 +94,7 @@ Please make sure you have fully synced your device and possibly done a backup of
 # Hacks
 ## remarkable-hacks
 https://github.com/ddvk/remarkable-hacks
+
 The first and most valuable improvement you should give a try is the remarkable-hacks by ddvk.
 
 The term hack here is quite fittin here. This is, indeed, a binary patch that is being applied upon the original UI (xochitl) binary file.  
@@ -129,6 +130,7 @@ Also if it was born for the RM1, the hack has been ported succesfull to RM2 sinc
 
 ## Toltec
 https://github.com/toltec-dev/toltec
+
 Toltec is a community-maintained repository of free software for the reMarkable tablet. 
 
 This project too was intended for the reMarkable 1 and still does not have a specific channel targeted to RM2, but many packages inthere are starting to run on RM2 as well. Many of them accomplish this thanks to the *rm2fb* tool, a "compatibility layer" that allow the RM2 framebuffer (that is slightly different from its predecessor) to be threated like the RM1 one.
@@ -163,6 +165,7 @@ Now you are using the testing branch. Be aware, things sitting there are not con
 
 ## rm2fb
 https://github.com/ddvk/remarkable2-framebuffer
+
 As previously said, this is a sort of compatibility interface to allow application intended to run on RM1 to be run smoothly on a RM2.  
 The major software difference between the two is, indeed, the framebuffer to interact with screen that has changed significantly with the new screen.
 
@@ -198,6 +201,7 @@ To help us handling that Genie comes to the resque (see below).
 
 ## Genie
 https://github.com/rmkit-dev/rmkit/tree/master/src/genie
+
 Genie is a config based gesture launcher.
 
 ### What is it for?
