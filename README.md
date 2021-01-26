@@ -36,7 +36,8 @@ A collection of hacks, mods, tools, tips &amp; tricks, specifically focused on t
 - [References](#references)
 
 ### Disclaimer
-While one of the goal of this repo is try to give you things (and simple procedures) that has been proved to work on a RM2, all you will do is at your own risk and no warranty is given by anyone to anyone. Be aware, you could brick your device if you don't know what you are doing!
+While one of the goal of this repo is trying to give you things (and simple procedures) that has been proved to work on a RM2, all you will do is at your own risk and no warranty is given by anyone to anyone.  
+Be aware, you could brick your device if you don't know what you are doing!
 
 Also, for the moment, all of this is very experimental and still requires some more test to be confirmed as working on every device!
 Everyone who is willing to test this and confirm is welcome :)
@@ -48,17 +49,18 @@ Well, you can start here!
 
 Most of the documentation, hacks and tools you can find online are still referred to the reMarkable 1 device and, unfortunately, not directly appliable to your reMarkable 2.  
 So this repo has the goal to collect all the "hacks" and tools that can be used on a reMarkable 2, how to apply them and what to expect.  
-Things are evolving rapidly on the subject, while the user base grows. Many project are starting to support RM2 and many more will come.  
+Things are evolving rapidly on the subject, while the userbase grows. Many project are starting to support RM2 and many more will come.  
 So this is an on-going project. I'll try to keep track of everything is going on for the RM2, but any collaboration is welcome!  
 
 ### Hacks?
 First let me spend a few words on the term "hack" as it's being used here.  
 Among the reMarkable community the term "hack" has been used to point to almost everything that is not writing on the device :)  
 For many users opening an SSH terminal to the device and editing a file falls under this term. For a seasoned linux user, clearly, that's all but hacking.  
-In one hand, the term "hack" in its wider (and original) sense of "using something in a different way than intended" is appropriate here, for a device that is being marketed as "just like a paper notebook".   
+
+In one hand, the term "hack" in its wider (and original) sense of "using something in a different way than originally intended" is appropriate here, for a device that is being marketed as "just like a paper notebook".   
 But we know that under that Eink screen sits a dual core 1.2GHz ARM CPU, with 1GB of RAM, running Linux... and... you can SSH into it by default!!! That's every hacker's dream!  
 
-So, for the one of you that links the term "hack" to "illegaly gain access" or the like... no, none of these tools or techniques are actually "hacking" anything!
+So, for the one of you that links the term "hack" to "illegaly gain access" or the like... no, none of these tools or techniques are actually "hacking" anything! Also, none of this illegal! But, be carefull, warranty could be invalidated modding the device.
 
 The most adequate term for many of these customizations should be "mod", while often is simply "installing custom software on an open device"... but, it's somehow significant that the way this kind of device are normally "jailed" by manufacturers make us think that installing a software is actually hacking it :)
 
@@ -73,7 +75,7 @@ A part from that, you will need the following steps:
 To enter something, you need a door. And the best one to do this sort of things is the virtual network interface that is provided over USB.  
 If you plug the USB-C cable into your PC, indeed, a part from recharging your device, a new virtual ethernet interface will be created, ready to estabilish a connection to the device.
 
-The RM2 will be available at 10.11.99.1
+The RM2 will be available at `10.11.99.1`
 
 ### SSH into device
 The first thing you should do then, is SSH into the device.  
@@ -100,10 +102,10 @@ The first and most valuable improvement you should give a try is the remarkable-
 The term hack is quite fitting here. This is, indeed, a binary patch that is being applied upon the original UI (xochitl) binary file.  
 
 ### What is it for?
-This patch adds a lot of improvements to the RM2, things that youonce you've tried you'll think they should have been there since the beginning, to start with.
+This patch adds a lot of improvements to the RM2, things that, once you've tried, you'll think they should have been there since the beginning.
 The list includes:
 - ability to select many different sizes for every writing/drawing tool
-- two additional customized pen/pencil
+- two additional customized tool (pen/pencil)
 - pinch to zoom
 - a focus mode, called "zen mode"
 - bookmarks
@@ -112,28 +114,28 @@ The list includes:
 
 ### Setup
 The installation is pretty simple:
-- you SSH into device (see above)
-- you copy-paste this command  
+- SSH into device (see above)
+- copy-paste this command  
 `sh -c "$(wget https://raw.githubusercontent.com/ddvk/remarkable-hacks/master/patch.sh -O-)" `  
 end press ENTER
 - the modded UI will be launched
 - once you've tried that, you press CTRL+C to stop it and go back to normal
-- if you want to make it permanent you will be instructed to type Y and the patch will be made persistent
+- if you want to make it permanent, you will be instructed to type Y at the end of the process and the patch will be made persistent
 
 The patch is pretty safe and it makes copies of the file it changes.  
 So... you can roll it back if anything goes wrong or if you stop liking it https://github.com/ddvk/remarkable-hacks#revert-in-case-things-go-terribly-wrong
 
-Follow the instruction on the original repo for more info: https://github.com/ddvk/remarkable-hacks.
+Follow the instructions on the original repo for more info: https://github.com/ddvk/remarkable-hacks.
 
 ### Compatibility
-Also if it was born for the RM1, the hack has been ported succesfull to RM2 since a while, it runs smoothly and automatically detect which kind of device you have during the setup.
+Also if it was born for the RM1, the hack has been ported succesfull to RM2 since a while, it runs smoothly and automatically detects which kind of device you have during the setup.
 
 ## Toltec
 https://github.com/toltec-dev/toltec
 
 Toltec is a community-maintained repository of free software for the reMarkable tablet. 
 
-This project too was intended for the reMarkable 1 and still does not have a specific channel targeted to RM2, but many packages inthere are starting to run on RM2 as well. Many of them accomplish this thanks to the *rm2fb* tool, a "compatibility layer" that allow the RM2 framebuffer (that is slightly different from its predecessor) to be threated like the RM1 one.
+This project too was intended for the reMarkable 1 and still does not have a specific channel targeted to RM2, but many packages inthere are starting to run on RM2 as well. Many of them accomplish this thanks to the *rm2fb* tool, a "compatibility layer" that allows the RM2 framebuffer (that is slightly different from its predecessor) to be threated like the RM1 one.
 
 ### What is it for?
 Once you setup Toltec, you'll basically have a package manager (opkg) at your hand and a bounch of software (https://toltec-dev.org/stable/) available for being installed with `opkg install <packagename>`.
@@ -167,7 +169,7 @@ Now you are using the testing branch. Be aware, things sitting there are not con
 https://github.com/ddvk/remarkable2-framebuffer
 
 As previously said, this is a sort of compatibility interface to allow application intended to run on RM1 to be run smoothly on a RM2.  
-The major software difference between the two is, indeed, the framebuffer to interact with screen that has changed significantly with the new screen.
+The major software difference between the two is, indeed, the framebuffer to interact with the screen, that has changed significantly with the new screen.
 
 ### What is it for?
 This software sits in the middle and lets older app interact with it like it was an RM1 framebuffer.
@@ -176,11 +178,12 @@ This software sits in the middle and lets older app interact with it like it was
 If you have installed Toltec (if you don't, go above and do it), installing rm2fb is as simple as `opkg install rm2fb`.
 
 ### Compatibility
-This is specifically for RM2 and does what it promise. Majority of the RM1 app will be able to work with this installed.  
-This does not mean that all of them will work well, though. Here's a list of tested apps: https://github.com/ddvk/remarkable2-framebuffer/issues/14.
+This is specifically for RM2 and does what it promises. Majority of the RM1 apps will be able to work with this installed.  
+This does not mean that all of them will work well, though.  
+Here's a list of tested apps: https://github.com/ddvk/remarkable2-framebuffer/issues/14.
 
 ## Oxide
-Once you have the ability to install new software, you will need a way to launch that, a part from manually launch it from an ssh session.  
+Once you have the ability to install new software, you will need a way to launch those (and go back to main screen), a part from manually launch it from an ssh session.  
 That's what a Launcher does. And Oxide is one of those (among with draft, remux, etc).
 
 ### Setup
@@ -198,16 +201,26 @@ BETA!!!
 
 The RM2 support on Oxide is still being properly implemented and it's still on a "beta" phase. But it kinda works.  
 Some bug has to be expected!!!  
-(PLease see below!)
+(Please see below!)
 
 One of the main thing to solve is that Oxide was thought to work together with the physical buttons the RM1 had, while the RM2 has none.  
 For instance, without the buttons, once you launch an app, you won't be able to go back to the launcher if the app has no exit button.  
-To help us handling that Genie comes to the resque (see below). We'll set a gesture (two fingers tapping) for that!
+To help us handling that, Genie comes to the resque (see below). We'll set a gesture (two fingers tapping) for that!
 
 ### Bugs
-The worst that happens to me with the current testing version in toltec is that the device come back from standby with a blank screen.
+The main known bug is that the device come back from standby with a blank screen.  
+This happens specifically if you do not set a PIN for the lockscreen when instructed.
+https://github.com/Eeems/oxide/issues/142
 
-If you get a blank screen awakening RM2, tap with two fingers and, thanks to genie, you'll be back to Oxide.
+If you get a blank screen awakening RM2, tap with two fingers and, thanks to genie, you'll be back to Oxide.  
+If you want to work around that, for the time being, you'll need to setup a PIN.
+
+If you already went through the setup and did not selected a PIN, you can do it now running the following:
+```
+systemctl stop tarnish
+rm /home/root/.config/Eeems/decay.conf
+systemctl start tarnish
+```
 
 ## Genie
 https://github.com/rmkit-dev/rmkit/tree/master/src/genie
@@ -216,7 +229,7 @@ Genie is a config based gesture launcher.
 
 ### What is it for?
 It allow you to execute commands when a gesture is performed.
-The main reasone we are going to use it is in combination with our Oxide Launcher, to handle the "Back to the launcher" action.
+The main reason we are going to use it is, in combination with our Oxide Launcher, to handle the "Back to the launcher" action.
 
 ### Setup
 - With Toltec installed, run `opkg install genie`.
