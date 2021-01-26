@@ -1,5 +1,5 @@
 # remarkable2-hacks
-A collection of hacks, mods, tools, tips &amp; tricks, specifically focused on the Remarkable 2
+A collection of hacks, mods, tools, tips &amp; tricks, specifically focused on the reMarkable 2
 
 # TOC
 - [remarkable2-hacks](#remarkable2-hacks)
@@ -54,23 +54,23 @@ So this is an on-going project. I'll try to keep track of everything is going on
 ### Hacks?
 First let me spend a few words on the term "hack" as it's being used here.  
 Among the reMarkable community the term "hack" has been used to point to almost everything that is not writing on the device :)  
-For many users open an SSH terminal to the device and edit a file follow under this term. For a seasoned linux user, clearly, that's all but hacking.  
+For many users opening an SSH terminal to the device and editing a file falls under this term. For a seasoned linux user, clearly, that's all but hacking.  
 In one hand, the term "hack" in its wider (and original) sense of "using something in a different way than intended" is appropriate here, for a device that is being marketed as "just like a paper notebook".   
-But we know that under that eink screen sits a dual core 1.2GHz ARM CPU, with 1GB of RAM, running Linux... and... you can SSH into it by default!!! That's every hacker's dream!  
+But we know that under that Eink screen sits a dual core 1.2GHz ARM CPU, with 1GB of RAM, running Linux... and... you can SSH into it by default!!! That's every hacker's dream!  
 
-So, for the one of you that links the term "hack" to "illegaly gain access" or the like... no, none of this tools or technique are actually "hacking" anything!
+So, for the one of you that links the term "hack" to "illegaly gain access" or the like... no, none of these tools or techniques are actually "hacking" anything!
 
-The most adequate term for many of these customizations should be "mod", while often is simply "installing custom software on an open device"... but, it's somewhat significant that the way this kind of device are normally "jailed" by manufacturers make us think that installing a software is actually hacking it :)
+The most adequate term for many of these customizations should be "mod", while often is simply "installing custom software on an open device"... but, it's somehow significant that the way this kind of device are normally "jailed" by manufacturers make us think that installing a software is actually hacking it :)
 
 ### Contribute / Support / Requests
 Please use Discussions for any feedback: https://github.com/danielebruneo/remarkable2-hacks/discussions
 
 ## Preliminary Steps
-First of all let me say that, while I try to make things simple for anyone, a general computer knowledge and some specific Linux shell confidence is required to go forward.  
-A part from that you will need the following steps:
+First of all let me say that, while I try to make things simple for everyone, a general computer knowledge and some specific Linux shell confidence are required to go forward.  
+A part from that, you will need the following steps:
 
 ### USB network interface
-To enter something, we need a door. And the best one to do this sort of things is the virtual network interface that is provided over USB.  
+To enter something, you need a door. And the best one to do this sort of things is the virtual network interface that is provided over USB.  
 If you plug the USB-C cable into your PC, indeed, a part from recharging your device, a new virtual ethernet interface will be created, ready to estabilish a connection to the device.
 
 The RM2 will be available at 10.11.99.1
@@ -97,7 +97,7 @@ https://github.com/ddvk/remarkable-hacks
 
 The first and most valuable improvement you should give a try is the remarkable-hacks by ddvk.
 
-The term hack here is quite fittin here. This is, indeed, a binary patch that is being applied upon the original UI (xochitl) binary file.  
+The term hack is quite fitting here. This is, indeed, a binary patch that is being applied upon the original UI (xochitl) binary file.  
 
 ### What is it for?
 This patch adds a lot of improvements to the RM2, things that youonce you've tried you'll think they should have been there since the beginning, to start with.
@@ -150,10 +150,10 @@ and the setup will start.
 
 Please notice that:
 - you may need (depending on your firmware) to replace the first line with `wget -k http://toltec-dev.org/bootstrap` bypassing wget SSL checks.
-- the second line performs a check against the actual installer content, so it will vary when a new version is release, so refer to the toltec repo for the latest version
+- the second line performs a check against the actual installer content, so it will vary when a new version is released, so refer to the toltec repo for the latest version
 
 ### Compatibility
-While not every package there has been tested for RM2 compatibility, many of them should work, once you setup rm2fb.
+While not every package there has been tested for RM2 compatibility, many should work, once you setup rm2fb.
 
 ### Additional notes
 If you want to use the *testing* branch, with the latest beta features, follow this instructions:
@@ -194,10 +194,20 @@ If you want to revert it back, just do:
 - `systemctl enable --now xochitl`
 
 ### Compatibility
+BETA!!!
+
 The RM2 support on Oxide is still being properly implemented and it's still on a "beta" phase. But it kinda works.  
-The main things is that Oxide was thought to work together with the physical buttons the RM1 had, while the RM2 has none.  
+Some bug has to be expected!!!  
+(PLease see below!)
+
+One of the main thing to solve is that Oxide was thought to work together with the physical buttons the RM1 had, while the RM2 has none.  
 For instance, without the buttons, once you launch an app, you won't be able to go back to the launcher if the app has no exit button.  
-To help us handling that Genie comes to the resque (see below).
+To help us handling that Genie comes to the resque (see below). We'll set a gesture (two fingers tapping) for that!
+
+### Bugs
+The worst that happens to me with the current testing version in toltec is that the device come back from standby with a blank screen.
+
+If you get a blank screen awakening RM2, tap with two fingers and, thanks to genie, you'll be back to Oxide.
 
 ## Genie
 https://github.com/rmkit-dev/rmkit/tree/master/src/genie
