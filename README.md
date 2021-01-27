@@ -222,6 +222,15 @@ rm /home/root/.config/Eeems/decay.conf
 systemctl start tarnish
 ```
 
+UPDATE:   
+Another temporary solution, if you do not want a lock PIN, is to run this:
+```
+cd /opt/usr/share/applications/
+mv codes.eeems.decay.oxide codes.eeems.decay.oxide.disabled
+systemctl restart tarnish
+```
+This will solve the issue, but this fix will eventually be removed by update of oxide.
+
 ## Genie
 https://github.com/rmkit-dev/rmkit/tree/master/src/genie
 
