@@ -118,7 +118,7 @@ Toltec is a community-maintained repository of free software for the reMarkable 
 This project too was intended for the reMarkable 1 and still does not have a specific channel targeted to RM2, but many packages inthere are starting to run on RM2 as well. Many of them accomplish this thanks to the *rm2fb* tool, a "compatibility layer" that allows the RM2 framebuffer (that is slightly different from its predecessor) to be threated like the RM1 one.
 
 ### What is it for?
-Once you setup Toltec, you'll basically have a package manager (opkg) at your hand and a bounch of software (https://toltec-dev.org/stable/) available for being installed with `opkg install <packagename>`.
+Once you setup Toltec, you'll basically have a package manager (opkg) at your hand and a bunch of software (https://toltec-dev.org/stable/) available for being installed with `opkg install <packagename>`.
 
 ### Setup
 Setup is pretty easy here too.
