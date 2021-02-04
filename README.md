@@ -59,7 +59,7 @@ The RM2 will be available at `10.11.99.1`
 
 ### SSH into device
 The first thing you should do then, is SSH into the device.  
-To do this, first you need to know how to SSH. Have a look here if you don't: http://letmegooglethat.com/?q=how+to+ssh+from+windows+linux+mac
+To do this, first you need to know how to SSH. Have a look here if you don't: https://github.com/danielebruneo/remarkable2-hacks/wiki/How-to-SSH-into-the-RM2
 
 Second, you'll need the IP address of your RM2.  
 While you can SSH into the RM2 through the WiFi connection (and the IP address it gets from there), this is not adviced because the connection could go down during some of the steps that are required to apply those changes.  
