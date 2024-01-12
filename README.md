@@ -77,6 +77,13 @@ Please make sure you have fully synced your device and possibly done a backup of
 ## remarkable-hacks
 https://github.com/ddvk/remarkable-hacks
 
+
+> [!WARNING]
+> Not all versions are supported. If you have updated your remarkable, you probably have a newer version which is not compatible.
+> Latest version supported:
+> rm2: 2.15.1.1189 (current version is 3.9)
+
+
 The first and most valuable improvement you should give a try is the remarkable-hacks by ddvk.
 
 The term hack is quite fitting here. This is, indeed, a binary patch that is being applied upon the original UI (xochitl) binary file.  
